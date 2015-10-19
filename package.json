@@ -1,0 +1,27 @@
+{
+  "name": "practica4",
+  "version": "1.0.0",
+  "description": "ULL ETSII Grado de Informatica. 3º PL. Lab \"Temperature Converter\"",
+  "main": "temperature.js",
+  "scripts": {
+    "test": "open tests/index.html"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "chai": "^3.3.0",
+    "mocha": "latest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:alu0100706734/practica4.git"
+  },
+  "keywords": [
+    "regexp"
+  ],
+  "author": "Juan Nicolas",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alu0100706734/practica4/issues"
+  },
+  "homepage": "https://github.com/alu0100706734/practica4"
+}
