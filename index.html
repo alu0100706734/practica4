@@ -2,22 +2,40 @@
   <head>
      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
      <title>JavaScript Temperature Converter</title>
-     <link href=normalize.css" rel="stylesheet" type="text/css">
-     <link href="global.css" rel="stylesheet" type="text/css">
+     <link href="css/normalize.css" rel="stylesheet" type="text/css">
+     <link href="css/global.css" rel="stylesheet" type="text/css">
 
      <script type="text/javascript" src="temperature.js"></script>
   </head>
-  <body>
-    <h1>Temperature Converter</h1>
-    <table>
-      <tr>
-        <th>Enter  Temperature (examples: 32F, 45C, -2.5f):</th>
-        <td><input id="original" autofocus onchange="calculate();" placeholder="32F" size="50"></td>
-      </tr>
-      <tr>
-        <th>Converted Temperature:</th>
-        <td><span class="output" id="converted"></span></td>
-      </tr>
-    </table>
+ <body>
+  <div id="web">
+  <div id ="titulo"> 
+    
+    <h1>Conversor de Temperaturas</h1>
+  
+  </div>
+    <div id="recuadro">
+      <h3>Práctica1 de Sistemas y Tecnologías web:<br>
+        - Conversor de temperaturas: Celsius a Farenheit y viceversa.<br>
+        - Modificación: Añadida opción Kelvin</h3> 
+      Introduce la temperatura a convertir:
+      <input id="original" autofocus onchange="resolver();" placeholder="32F" size="50"> Puedes poner por ejemplo 32F, 100C ó 294K<br><br>
+      
+      Temperatura convertida:
+
+
+			  <span class="output" id="converter"></span>
+              <!--	  
+			  <span class="output" id="convertedF"> </span>
+              <span class="output" id="convertedC"> </span>
+              <span class="output" id="convertedK"> </span>
+			  -->
+    </div>
+	
+	<div align="center"><a href="/tests/index.html"> Tests </a></div>
+	Repositorio GitHub: <a href="http://www.Github.com/alu0100706734/converter">Click Aquí</a>
+    
+    
+    </div><!-- web -->
   </body>
 </html>

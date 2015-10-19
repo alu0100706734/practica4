@@ -1,0 +1,37 @@
+body {
+  background-image: url(http://wallpawn.com/wp-content/uploads/2015/09/blue_29_cool_background.jpg);
+   padding: 0;
+  margin: 0;
+  repeat: no-repeat;
+  background-size: cover;
+  background-attachment:fixed;
+}
+
+#web {
+  width: 70%;
+  height: auto;
+  background-color: #0099FF;
+  margin: auto;
+  border-radius: 10px;
+  box-shadow: 10px -10px 20px #000;
+  
+}
+#titulo
+{
+  
+  width: 50%;
+  height: 100px;
+  background-color: #0066CC;
+  margin: auto;
+  text-align: center;
+
+}
+#original{
+  
+  margin: ;
+}
+#recuadro {
+ position: relative;
+ translatex (10%);
+
+}
