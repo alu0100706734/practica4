@@ -1,6 +1,8 @@
 var assert = chai.assert;
+var mochassert = require('assert';)
 
 suite('temperature', function() {
+    
     test('32F = 0C', function() {
         original.value = "32F";
         calculate();
@@ -16,4 +18,13 @@ suite('temperature', function() {
         calculate();
         assert.match(converted.innerHTML, /ERROR/);
     });
+});
+
+describe('Array', function() {
+  describe('#indexOf()', function () {
+    it('should return -1 when the value is not present', function () {
+      mochassert.equal(-1, [1,2,3].indexOf(5));
+      mochassert.equal(-1, [1,2,3].indexOf(0));
+    });
+  });
 });
