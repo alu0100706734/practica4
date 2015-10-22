@@ -1,30 +1,19 @@
 var assert = chai.assert;
-var mochassert = require('assert';)
 
 suite('temperature', function() {
-    
     test('32F = 0C', function() {
-        original.value = "32F";
-        calculate();
-        assert.deepEqual(converted.innerHTML, "0.0 Celsius");
+        original.value = "32f";
+        resolver();
+        assert.deepEqual(converter.innerHTML, "0.00º Celsius 273.15º Kelvin");
     });
     test('45C = 113.0 Farenheit', function() {
-        original.value = "45C";
-        calculate();
-        assert.deepEqual(converted.innerHTML, "113.0 Farenheit");
+        original.value = "45c";
+        resolver();
+        assert.deepEqual(converter.innerHTML, "113.00º Farenheit 318.15º Kelvin");
     });
     test('5X = error', function() {
         original.value = "5X";
-        calculate();
-        assert.match(converted.innerHTML, /ERROR/);
+        resolver();
+        assert.match(converter.innerHTML, /ERROR/);
     });
-});
-
-describe('Array', function() {
-  describe('#indexOf()', function () {
-    it('should return -1 when the value is not present', function () {
-      mochassert.equal(-1, [1,2,3].indexOf(5));
-      mochassert.equal(-1, [1,2,3].indexOf(0));
-    });
-  });
 });
