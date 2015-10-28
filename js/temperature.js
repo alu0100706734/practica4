@@ -14,8 +14,8 @@ function Celsius(valor){
 	this.tipo = 'c';
 	Temperatura.call(this, valor,this.tipo);
 	this.Transform = function (){
-	var dato = this.valor;
-	return (((this.valor * 9/5)+32).toFixed(2) + "º Farenheit " + (dato+273.15).toFixed(2) + "º Kelvin");
+		var dato = parseInt(this.valor);
+		return (((this.valor * 9/5)+32).toFixed(2) + "º Farenheit " + (273.15).toFixed(2) + "º Kelvin");
 	}
 }
 
@@ -23,7 +23,7 @@ function Farenheit(valor){
 	this.tipo = 'f';
 	Temperatura.call(this, valor, this.tipo);
 	this.Transform = function(){
-		var dato = this.valor;
+		var dato = parseInt(this.valor);
 		return (((this.valor-32)*5/9).toFixed(2) + "º Celsius " + ((dato+459.67)*5/9).toFixed(2) + "º Kelvin");
 	}
 }
@@ -48,6 +48,7 @@ function resolver() {
     var num = m[1];
 		num = parseFloat(num);
     var tipo = m[3];
+    	tipo = tipo.toLowerCase();
     var e = m[2];
 		e = parseInt(e);
 

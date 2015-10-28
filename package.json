@@ -8,12 +8,16 @@
   },
   "dependencies": {},
   "devDependencies": {
+    "blanket": "^1.1.7",
     "chai": "^3.3.0",
     "gulp": "^3.9.0",
+    "gulp-blanket-mocha": "0.0.4",
     "gulp-concat": "^2.6.0",
     "gulp-uglify": "^1.4.2",
     "gulp-util": "^3.0.6",
-    "mocha": "latest"
+    "karma": "^0.13.14",
+    "mocha": "latest",
+    "sinon": "^1.17.2"
   },
   "repository": {
     "type": "git",
