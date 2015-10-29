@@ -6,6 +6,7 @@
      <link href="css/global.css" rel="stylesheet" type="text/css">
 
      <script type="text/javascript" src="js/temperature.js"></script>
+     <script type="text/javascript" src="js/wworker.js"></script>
   </head>
  <body>
   <div id="web">
@@ -25,9 +26,6 @@
 
 
 			  <span class="output" id="converter"></span>
-			  <button onclick="startWorker()">Start Worker</button>
-			  <button onclick="stopWorker()">Stop Worker</button>
-			  <output id="result"></output>
     </div>
 	
 	<div align="center"><a href="http://alu0100706734.github.io/practica4/test/test_blanket.html"> Tests </a></div>
@@ -35,27 +33,6 @@
     
     
     </div><!-- web -->
-  <script>
-    var w;
-function startWorker() {
-	if(typeof(Worker) !=="undefined") {
-		if (typeof(w) == "undefined") {
-			w = new Worker("js/webworker.js");
-		}
-		w.onmessage = function(event) {
-			document.getElementById("result").innerHTML = event.data;
-		};
-	} else {
-		document.getElementById("result").innerHTML = "Actualiza tu explorador";
-	}
-}
-
-function stopWorker(){
-	w.terminate();
-	w = undefined;
-}
-
-  </script>
   
   </body>
 </html>
