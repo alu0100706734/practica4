@@ -40,7 +40,7 @@
 function startWorker() {
 	if(typeof(Worker) !=="undefined") {
 		if (typeof(w) == "undefined") {
-			w = new Worker("webworker.js");
+			w = new Worker("js/webworker.js");
 		}
 		w.onmessage = function(event) {
 			document.getElementById("result").innerHTML = event.data;
