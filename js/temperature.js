@@ -1,21 +1,3 @@
-var w;
-function startWorker() {
-	if(typeof(Worker) !=="undefined") {
-		if (typeof(w) == "undefined") {
-			w = new Worker("webworker.js");
-		}
-		w.onmessage = function(event) {
-			document.getElementById("result").innerHTML = event.data;
-		};
-	} else {
-		document.getElementById("result").innerHTML = "Actualiza tu explorador";
-	}
-}
-
-function stopWorker(){
-	w.terminate();
-	w = undefined;
-}
 
 function Medida(valor, tipo){
     this.valor = valor || 0;
