@@ -9,6 +9,7 @@
   "dependencies": {},
   "devDependencies": {
     "blanket": "^1.1.7",
+    "blanket-node": "^2.0.0",
     "chai": "^3.3.0",
     "gulp": "^3.9.0",
     "gulp-blanket-mocha": "0.0.4",

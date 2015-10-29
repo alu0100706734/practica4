@@ -37,6 +37,10 @@ function Kelvin(valor){
 	}
 }
 
+function Error(){
+		return ("ERROR! Prueba con algo como '52.8E4K' ");
+}
+
 
 function resolver() {
   var temp = document.getElementById('original').value;  // mirar que coja un elemento
@@ -52,7 +56,6 @@ function resolver() {
     var e = m[2];
 		e = parseInt(e);
 
-		
 	 switch (tipo){
 		 case 'c':
 		 var celsius = new Celsius(num);
@@ -70,9 +73,8 @@ function resolver() {
 		 converter.innerHTML = kelvin.Transform();
 		 break;
 	 }
-  }
-  
+  	}
     else {
-    converter.innerHTML = "ERROR! Prueba con algo como '52.8E4K' ";
-  }
+    	converter.innerHTML = Error();
+  	}
 }

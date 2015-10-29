@@ -28,9 +28,9 @@ describe('temperature', function() {
 		 expect(salida.innerHTML).to.equal("113.00º Farenheit 273.15º Kelvin");
     });
     it('5X = error', function() {
-       var temperatura = new Temperatura(5,'X');
-        salida.innerHTML = resolver();
-        expect(salida.innerHTML).match( "ERROR! Prueba con algo como '52.8E4K' ");
+      
+        salida.innerHTML = Error();
+        expect(salida.innerHTML).to.equal( "ERROR! Prueba con algo como '52.8E4K' ");
     });
 
 });
