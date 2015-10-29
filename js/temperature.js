@@ -1,5 +1,5 @@
 var w;
-function StartWorker() {
+function startWorker() {
 	if(typeof(Worker) !=="undefined") {
 		if (typeof(w) == "undefined") {
 			w = new Worker("webworker.js");
@@ -12,7 +12,7 @@ function StartWorker() {
 	}
 }
 
-function StopWorker(){
+function stopWorker(){
 	w.terminate();
 	w = undefined;
 }
