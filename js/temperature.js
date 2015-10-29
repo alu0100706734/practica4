@@ -1,3 +1,22 @@
+var w;
+function StartWorker() {
+	if(typeof(Worker) !=="undefined") {
+		if (typeof(w) == "undefined") {
+			w = new Worker("webworker.js");
+		}
+		w.onmessage = function(event) {
+			document.getElementById("result").innerHTML = event.data;
+		};
+	} else {
+		document.getElementById("result").innerHTML = "Actualiza tu explorador";
+	}
+}
+
+function StopWorker(){
+	w.terminate();
+	w = undefined;
+}
+
 function Medida(valor, tipo){
     this.valor = valor || 0;
     this.tipo = tipo || "no type";
