@@ -4,7 +4,7 @@ var w;
 
 if(typeof(Worker) !== "undefined"){
     if(typeof(w) == "undefined"){
-        w = new Worker("temperature.js");
+        w = new Worker("js/temperature.js");
     }   
 }
 
@@ -15,4 +15,4 @@ function initWorker(){
 
 w.onmessage = function(event){
     document.getElementById("converter").innerHTML = event.data;
-}
+};

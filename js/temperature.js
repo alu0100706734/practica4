@@ -1,15 +1,16 @@
+"use strict";
 
 function Medida(valor, tipo){
-    this.valor = valor || 0;
-    this.tipo = tipo || "no type";
-	this.getMedida = function(){
-		return this.valor + this.tipo;
-	}
+    this.valor = valor;
+    this.tipo = tipo;
+	
 }
 
-function Temperatura(valor, tipo){
-    Medida.call(this, valor, tipo); 
+function Temperatura(){
+    Medida.call(this); 
 }
+
+Temperatura.prototype = new Medida();
 
 function Celsius(valor){
 	this.tipo = 'c';
@@ -43,39 +44,65 @@ function Error(){
 }
 
 
-function resolver() {
-  var temp = document.getElementById('original').value;  // mirar que coja un elemento
-  var converter  = document.getElementById('converter');
-  var regexp = /(^[-+]?\d+(?:\.\d*)?)(?:[eE]?([-+]?\d+))?\s*([cCfFkK])/;
-  var m = temp.match(regexp);
 
-  if (m) {
+Medida.prototype.SetValor = function(valor){
+	this.valor = valor;
+}
+
+Medida.prototype.SetTipo = function(tipo){
+	this.tipo = tipo;
+}
+
+Medida.prototype.GetValor = function(){
+	return this.valor;
+}
+
+Medida.prototype.GetTipo = function(){
+	return this.tipo;
+}
+
+Temperatura.prototype.entrada = function(valor){
+	var regexp = /(^[-+]?\d+(?:\.\d*)?)(?:[eE]?([-+]?\d+))?\s*([cCfFkK])/;
+    var m = valor.match(regexp);
+    this.SetValor(m[1]);
+    this.SetTipo(m[3]).toLowerCase();
+}
+
+
+
+Temperatura.prototype.resolver = function() {
+  
+  /*if (m) {
     var num = m[1];
 		num = parseFloat(num);
     var tipo = m[3];
     	tipo = tipo.toLowerCase();
     var e = m[2];
-		e = parseInt(e);
+		e = parseInt(e);*/
 
-	 switch (tipo){
-		 case 'c':
+  if (this.GetTipo() == 'c'){
 		 var celsius = new Celsius(num);
 		 converter.innerHTML = celsius.Transform();
-		 break;
-		 
-		 case 'f':
+  }
+ else if (this.GetTipo() == 'f'){
 		 var farenheit = new Farenheit(num);
 		 converter.innerHTML = farenheit.Transform();
-	
-		 break;
-		 
-		 case 'k':
-		 var kelvin = new Kelvin(num);
+ }
+ 
+ else if (this.GetTipo() == 'k'){
+ 		var kelvin = new Kelvin(num);
 		 converter.innerHTML = kelvin.Transform();
-		 break;
 	 }
-  	}
-    else {
+
+    else if (this.GetTipo() != 'k' | 'f' | 'c') {
     	converter.innerHTML = Error();
   	}
 }
+
+/*this.addEventListener('message',function(valor){
+	var temperatura = new Temperatura();
+	temperatura.entrada(valor.data);
+	var res = Temperatura.resolver();
+	this.postMessage(res);
+	
+},false); */
