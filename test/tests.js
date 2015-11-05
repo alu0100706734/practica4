@@ -1,36 +1,21 @@
 var expect = chai.expect;
 
 describe('temperature', function() {
-	
-	describe("Constructores", function() {
-  
-    it("Valor por defecto = 0", function() {
-      var temperatura = new Temperatura();
-      expect(temperatura.valor).to.equal(0);
-    });
     
-    it("Tipo por defecto = 'no type'", function() {
-      var medida = new Medida(0,0);
-      expect(medida.tipo).to.equal("no type");
-    });
-    
-  });
     it('32F = 0C', function() {
-         var num = "32";
-		 var farenheit = new Farenheit(num);
-		 salida.innerHTML = farenheit.Transform();
-		 expect(salida.innerHTML).to.equal("0.00º Celsius 273.15º Kelvin");
+		var temp = new Temperatura();
+		temp.setValor(32);
+		temp.setTipo("F");
+		var res = temp.ftoc();
+		expect(res).to.equal(0);
    }); 
-    it('45C = 113.0 Farenheit', function() {
-         var num = "45";
-		 var celsius = new Celsius(num);
-		 salida.innerHTML = celsius.Transform();
-		 expect(salida.innerHTML).to.equal("113.00º Farenheit 273.15º Kelvin");
-    });
-    it('5X = error', function() {
-      
-        salida.innerHTML = Error();
-        expect(salida.innerHTML).to.equal( "ERROR! Prueba con algo como '52.8E4K' ");
-    });
-
+   
+       it('100C = 212F', function() {
+		var temp = new Temperatura();
+		temp.setValor(100);
+		temp.setTipo("C");
+		var res = temp.ctof();
+		expect(res).to.equal(212.00);
+   });
 });
+  
