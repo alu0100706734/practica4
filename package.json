@@ -4,7 +4,7 @@
   "description": "ULL ETSII Grado de Informatica. 3º PL. Lab \"Temperature Converter\"",
   "main": "temperature.js",
   "scripts": {
-    "test": "open tests/index.html"
+    "test": "karma start"
   },
   "dependencies": {},
   "devDependencies": {

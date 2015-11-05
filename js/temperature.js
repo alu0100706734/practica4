@@ -28,12 +28,12 @@ Temperatura.prototype.ftoc = function(){
 }
 
 Temperatura.prototype.ftok = function(){
-	var resultado = ((this.getValor*5/9) + 459.67);
+	var resultado = ((this.getValor() *5/9) + 459.67);
 	return resultado;
 }
 
 Temperatura.prototype.ktoc = function(){
-	var resultado = (this.getValor - 273.15);
+	var resultado = (this.getValor() - 273.15);
 	return resultado;
 }
 
@@ -42,10 +42,6 @@ Temperatura.prototype.ktof = function(){
 	return resultado;
 }
 
-
-function Error(){
-		return ("ERROR! Prueba con algo como '52.8E4K' ");
-}
 
 Medida.prototype.setValor = function(valor){
 	this.valor = valor;
