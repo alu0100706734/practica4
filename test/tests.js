@@ -26,12 +26,12 @@ describe('temperature', function() {
 		expect(res).to.equal(373.15);
    });
    
-    it('78F = 515.23K', function() {
+    it('78F = 298.71K', function() {
 		var temp = new Temperatura();
-		temp.setValor(100);
+		temp.setValor(78);
 		temp.setTipo("F");
 		var res = temp.ftok();
-		expect(res).to.equal(515.2255555555556);
+		expect(res).to.equal(298.7055555555556);
    });
    
     it('273.15K = 0C', function() {

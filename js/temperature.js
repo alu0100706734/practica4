@@ -28,7 +28,7 @@ Temperatura.prototype.ftoc = function(){
 }
 
 Temperatura.prototype.ftok = function(){
-	var resultado = ((this.getValor() *5/9) + 459.67);
+	var resultado = ((this.getValor() + 459.67)*5/9);
 	return resultado;
 }
 
@@ -100,3 +100,4 @@ Temperatura.prototype.resolver = function() {
 	document.getElementById("converter");
 	converter.innerHTML = calculo;
 }
+
